@@ -66,12 +66,7 @@ const Navbar = () => {
             </label>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
               {Links}
-              <Link to={'/login'}
-                className="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-indigo-600 transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:text-indigo-500"
-                href="/download"
-              >
-                Log in
-              </Link>
+
             </ul>
           </div>
           <img className=" md:w-52" src={logo} alt="" />
