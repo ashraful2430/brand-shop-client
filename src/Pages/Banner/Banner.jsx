@@ -32,12 +32,7 @@ const Banner = () => {
                                 </button>
                             </a>
 
-                            <button
-                                className="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-white bg-pink-600"
-                                href=""
-                            >
-                                About us
-                            </button>
+
                         </div>
                     </div>
                 </div>

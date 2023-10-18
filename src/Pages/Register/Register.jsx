@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import swal from "sweetalert";
+
 
 const Register = () => {
-    const [showPass, setShowPass] = useState(false)
+    const [showPass, setShowPass] = useState(false);
+    const { signUp } = useContext(AuthContext)
 
 
     const handleRegister = e => {
@@ -14,6 +18,23 @@ const Register = () => {
         const password = form.password.value;
         const user = { name, email, password };
         console.log(user);
+
+        if (!/^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{6,}$/.test(password)) {
+            swal("ERROR!", "Password should have one uppercase and one special character and should be at least 6 characters!", "error");
+            return;
+        }
+
+        signUp(email, password)
+            .then(result => {
+                console.log(result.user);
+                swal("Good job!", "User created successfully!", "success");
+            })
+            .catch(error => {
+                console.error(error);
+                const slicedMessage = error.message.slice(10, 50)
+                swal("ERROR!", slicedMessage, "error");
+            })
+
     }
     return (
         <div className="pt-14">
