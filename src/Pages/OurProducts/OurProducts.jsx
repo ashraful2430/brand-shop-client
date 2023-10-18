@@ -14,7 +14,7 @@ const OurProducts = () => {
                     <p className="mt-4 md:hidden block font-medium">Discover the Future in Your Hands! Explore our premium selection of cutting-edge PCs and smartphones that empower you to work, play, and connect like never before. </p>
 
                 </div>
-                <div className="mt-12 mb-10">
+                <div className="mt-12 mb-10 max-w-screen-xl mx-auto">
                     <h3 className="text-3xl md:text-4xl font-bold">Our Computer Brands</h3>
                     <p className="mt-3 font-medium">Discover a world of innovation and performance with our handpicked selection of top PC brands.</p>
                 </div>
@@ -104,7 +104,7 @@ const OurProducts = () => {
 
 
 
-                <div className="mt-12 mb-10">
+                <div className="mt-12 mb-10 max-w-screen-xl mx-auto ">
                     <h3 className="text-3xl md:text-4xl font-bold">Our Phones Brands</h3>
                     <p className="mt-3 font-medium">Discover a world of innovation and performance with our handpicked selection of top Phone brands.</p>
                 </div>
