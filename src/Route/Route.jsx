@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import Blog from "../Pages/Blog/Blog";
+import Description from "../Pages/Description/Description";
 
 const myPersonalRoutes = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch('/public.json')
       },
       {
         path: "/login",
@@ -37,6 +39,11 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>
+      },
+      {
+        path: "/description/:id",
+        element: <Description></Description>,
+        loader: () => fetch('/public.json')
       }
     ],
   },
