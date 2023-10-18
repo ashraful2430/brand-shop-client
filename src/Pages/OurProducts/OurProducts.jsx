@@ -29,11 +29,11 @@ const OurProducts = () => {
                                 <img className="h-28 w-full rounded-t-xl" src="https://i.ibb.co/0Vd8Dyf/lenovo-logo-3.png" alt="" />
                             </div>
                             <div className=" bg-white p-4  sm:p-6">
-                                <a href="#">
+                                <div>
                                     <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                         Lenovo
                                     </h3>
-                                </a>
+                                </div>
 
                                 <div className="mt-4 flex flex-wrap gap-1">
                                     <span
@@ -56,11 +56,11 @@ const OurProducts = () => {
                                 <img className="h-32 w-full rounded-t-xl" src="https://i.ibb.co/DKBN4cP/asus-logo.png" alt="" />
                             </div>
                             <div className=" bg-white p-4 ">
-                                <a href="#">
+                                <div >
                                     <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                         Asus
                                     </h3>
-                                </a>
+                                </div>
 
                                 <div className="mt-4 flex flex-wrap gap-1">
                                     <span
@@ -83,11 +83,11 @@ const OurProducts = () => {
                                 <img className="h-32 w-full rounded-t-xl" src="https://i.ibb.co/M1kf2RY/acer.png" alt="" />
                             </div>
                             <div className=" bg-white p-4 ">
-                                <a href="#">
+                                <div>
                                     <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                         Acer
                                     </h3>
-                                </a>
+                                </div>
 
                                 <div className="mt-4 flex flex-wrap gap-1">
                                     <span
@@ -95,8 +95,6 @@ const OurProducts = () => {
                                     >
                                         Computer
                                     </span>
-
-
                                 </div>
                             </div>
                         </article>
@@ -120,11 +118,11 @@ const OurProducts = () => {
                                 <img className="h-28 w-full rounded-t-xl " src="https://i.ibb.co/mhCfyjH/apple-7446229-1280.png" alt="" />
                             </div>
                             <div className=" bg-white p-4  sm:p-6">
-                                <a href="#">
+                                <div href="#">
                                     <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                         Apple
                                     </h3>
-                                </a>
+                                </div>
 
                                 <div className="mt-4 flex flex-wrap gap-1">
                                     <span
@@ -147,11 +145,11 @@ const OurProducts = () => {
                                 <img className="h-32 w-full rounded-t-xl" src="https://i.ibb.co/17gyFHQ/samsung-logo.png" alt="" />
                             </div>
                             <div className=" bg-white p-4 ">
-                                <a href="#">
+                                <div >
                                     <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                         Samsung
                                     </h3>
-                                </a>
+                                </div>
 
                                 <div className="mt-4 flex flex-wrap gap-1">
                                     <span
@@ -174,11 +172,11 @@ const OurProducts = () => {
                                 <img className="h-32 w-full rounded-t-xl" src="https://i.ibb.co/G0RvyMF/xiaomi-logo-5.png" alt="" />
                             </div>
                             <div className=" bg-white p-4 ">
-                                <a href="#">
+                                <div href="#">
                                     <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                         Xiaomi
                                     </h3>
-                                </a>
+                                </div>
 
                                 <div className="mt-4 flex flex-wrap gap-1">
                                     <span
@@ -186,8 +184,6 @@ const OurProducts = () => {
                                     >
                                         Phone
                                     </span>
-
-
                                 </div>
                             </div>
                         </article>

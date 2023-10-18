@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import Special from "../Banner/Special";
 import OurProducts from "../OurProducts/OurProducts";
 
 const Home = () => {
@@ -8,6 +9,9 @@ const Home = () => {
     </div>
     <div className="mt-16 p-6 font-sans">
       <OurProducts></OurProducts>
+    </div>
+    <div className="mt-16 font-sans">
+      <Special></Special>
     </div>
   </>;
 };
