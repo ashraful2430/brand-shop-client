@@ -49,26 +49,32 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/lenovo",
         element: <Lenovo></Lenovo>,
+        loader: () => fetch('http://localhost:5000/brands')
       },
       {
         path: "/asus",
-        element: <Asus></Asus>
+        element: <Asus></Asus>,
+        loader: () => fetch('http://localhost:5000/brands')
       },
       {
         path: "/acer",
-        element: <Acer></Acer>
+        element: <Acer></Acer>,
+        loader: () => fetch('http://localhost:5000/brands')
       },
       {
         path: "/apple",
-        element: <Apple></Apple>
+        element: <Apple></Apple>,
+        loader: () => fetch('http://localhost:5000/brands')
       },
       {
         path: "/samsung",
-        element: <Samsung></Samsung>
+        element: <Samsung></Samsung>,
+        loader: () => fetch('http://localhost:5000/brands')
       },
       {
         path: "/xiaomi",
-        element: <Xiaomi></Xiaomi>
+        element: <Xiaomi></Xiaomi>,
+        loader: () => fetch('http://localhost:5000/brands')
       }
     ],
   },
