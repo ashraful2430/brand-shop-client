@@ -7,8 +7,13 @@ import Register from "../Pages/Register/Register";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import Blog from "../Pages/Blog/Blog";
-import Description from "../Pages/Description/Description";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import Lenovo from "../Pages/Lenovo/Lenovo";
+import Asus from "../Pages/Asus/Asus";
+import Acer from "../Pages/Acer/Acer";
+import Apple from "../Pages/Apple/Apple";
+import Samsung from "../Pages/Samsung/Samsung";
+import Xiaomi from "../Pages/Xiaomi/Xiaomi";
 
 const myPersonalRoutes = createBrowserRouter([
   {
@@ -19,7 +24,7 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('/public.json')
+
       },
       {
         path: "/login",
@@ -42,9 +47,28 @@ const myPersonalRoutes = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
-        path: "/description/:id",
-        element: <Description></Description>,
-        loader: () => fetch('/public.json')
+        path: "/lenovo",
+        element: <Lenovo></Lenovo>,
+      },
+      {
+        path: "/asus",
+        element: <Asus></Asus>
+      },
+      {
+        path: "/acer",
+        element: <Acer></Acer>
+      },
+      {
+        path: "/apple",
+        element: <Apple></Apple>
+      },
+      {
+        path: "/samsung",
+        element: <Samsung></Samsung>
+      },
+      {
+        path: "/xiaomi",
+        element: <Xiaomi></Xiaomi>
       }
     ],
   },

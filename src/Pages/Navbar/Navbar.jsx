@@ -3,7 +3,9 @@ import logo from "../../assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 const Navbar = () => {
+
   const { user, logOut } = useContext(AuthContext);
+
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -83,11 +85,14 @@ const Navbar = () => {
           </div>
           <img className=" md:w-52" src={logo} alt="" />
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+        <div className="navbar-center hidden  lg:flex">
+          <ul className="menu menu-horizontal z-30 px-1">
             {Links}
           </ul>
         </div>
+        {/* <div >
+          <input type="checkbox" className="toggle" />
+        </div> */}
         <div className="navbar-end">
           {user?.email ? (
             <div className="dropdown dropdown-end">
