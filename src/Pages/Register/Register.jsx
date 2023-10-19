@@ -1,13 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
 import swal from "sweetalert";
 
 
 const Register = () => {
     const [showPass, setShowPass] = useState(false);
-    const { signUp } = useContext(AuthContext)
+    const { signUp, handleProfile, googleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleGoogleSignIn = e => {
+        e.preventDefault();
+        googleSignIn()
+            .then(result => {
+                swal("Good job!", "User Loged in successfully!", "success");
+                navigate(location?.state ? location.state : '/')
+                console.log(result.user);
+            })
+            .catch(error => {
+                const slicedMessage = error.message.slice(10, 50)
+                swal("ERROR!", slicedMessage, "error");
+                console.error(error);
+            })
+    }
 
 
     const handleRegister = e => {
@@ -17,6 +35,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const user = { name, email, password };
+
         console.log(user);
 
         if (!/^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{6,}$/.test(password)) {
@@ -26,8 +45,11 @@ const Register = () => {
 
         signUp(email, password)
             .then(result => {
-                console.log(result.user);
+                handleProfile(name)
+                e.target.reset();
+                console.log(result);
                 swal("Good job!", "User created successfully!", "success");
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error);
@@ -118,17 +140,23 @@ const Register = () => {
                             </div>
                         </div>
 
+
                         <button
+                            className="inline-block rounded w-full px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
                             type="submit"
-                            className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% mt-6"
+
                         >
-                            Sign up
+                            Sign Up
                         </button>
 
                         <p className="text-center text-sm text-gray-500">
                             Already have an account?
                             <Link to={'/login'} className="underline text-blue-500 font-bold" href="">Log in</Link>
                         </p>
+                        <p className="text-center font-bold">OR</p>
+                        <div>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline w-full">Google Log in <FcGoogle></FcGoogle></button>
+                        </div>
                     </form>
                 </div>
             </div>

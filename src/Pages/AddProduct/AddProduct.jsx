@@ -1,6 +1,21 @@
 
 
 const AddProduct = () => {
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const form = e.target;
+        const productName = form.product_name.value;
+        const brandName = form.brand_name.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const description = form.description.value;
+        const photo = form.photo.value;
+        const details = { productName, brandName, type, price, rating, description, photo }
+        console.log(details);
+    }
+
     return (
         <>
 
@@ -75,7 +90,7 @@ const AddProduct = () => {
                                 </p>
                             </div>
 
-                            <form className="mt-8 grid grid-cols-6 gap-6  w-full">
+                            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6  w-full">
                                 <div className="col-span-6 sm:col-span-3 w-full ">
                                     <label
                                         htmlFor="FirstName"

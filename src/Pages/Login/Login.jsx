@@ -1,10 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
+import swal from "sweetalert";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false)
+    const { login, googleSignIn } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
 
+    const handleGoogleSignIn = e => {
+        e.preventDefault();
+        googleSignIn()
+            .then(result => {
+                swal("Good job!", "User Loged in successfully!", "success");
+                navigate(location?.state ? location.state : '/')
+                console.log(result.user);
+            })
+            .catch(error => {
+                const slicedMessage = error.message.slice(10, 50)
+                swal("ERROR!", slicedMessage, "error");
+                console.error(error);
+            })
+    }
 
     const handleLogin = e => {
         e.preventDefault();
@@ -13,6 +33,18 @@ const Login = () => {
         const password = form.password.value;
         const user = { email, password };
         console.log(user);
+
+        login(email, password)
+            .then(result => {
+                console.log(result.user);
+                swal("Good job!", "User Loged in successfully!", "success");
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error);
+                const slicedMessage = error.message.slice(10, 50)
+                swal("ERROR!", slicedMessage, "error");
+            })
     }
 
     return (
@@ -86,8 +118,9 @@ const Login = () => {
                         </div>
 
                         <button
+                            className="inline-block rounded w-full px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
                             type="submit"
-                            className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% mt-6"
+
                         >
                             Log in
                         </button>
@@ -96,6 +129,11 @@ const Login = () => {
                             No account?
                             <Link to={'/register'} className="underline text-blue-500 font-bold" href="">Sign up</Link>
                         </p>
+                        <br />
+                        <p className="text-center font-bold">OR</p>
+                        <div>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline w-full">Google Log in <FcGoogle></FcGoogle></button>
+                        </div>
                     </form>
                 </div>
             </div>

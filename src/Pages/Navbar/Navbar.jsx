@@ -1,6 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   const Links = <>
     <li>
       <NavLink
@@ -77,12 +89,37 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to={'/login'}
-            className="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-white bg-pink-600 transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:text-indigo-500 "
-            href="/download"
-          >
-            Log in
-          </Link>
+          {user?.email ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <p className="font-medium">
+                    {user.displayName}
+                  </p>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-sm  btn-ghost transition hover:scale-110 hover:shadow-xl focus:outline-none"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-white bg-pink-600 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-pink-500">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </>

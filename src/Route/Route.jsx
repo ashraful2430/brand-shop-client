@@ -8,6 +8,7 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import Blog from "../Pages/Blog/Blog";
 import Description from "../Pages/Description/Description";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 const myPersonalRoutes = createBrowserRouter([
   {
@@ -30,11 +31,11 @@ const myPersonalRoutes = createBrowserRouter([
       },
       {
         path: "/add-product",
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path: "/cart",
-        element: <MyCart></MyCart>
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
       {
         path: "/blog",
