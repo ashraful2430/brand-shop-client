@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const LenovoDetails = ({ details }) => {
     const { brandName, description, photo, price, productName, rating, type, _id } = details;
-    console.log(details);
+
     return (
         <div>
             <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg  p-5">
@@ -35,7 +35,7 @@ const LenovoDetails = ({ details }) => {
                         </div>
                     </div>
                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                        {description}
+                        {description.slice(0, 60)}<span className='text-blue-400 font-medium'>...Read more</span>
                     </p>
                     <div className='mt-4'>
                         <p>Price: {price}$</p>
@@ -58,11 +58,13 @@ const LenovoDetails = ({ details }) => {
                             </Link>
                         </div>
                         <div>
-                            <button
-                                className="inline-block rounded btn btn-outline px-4 py-3 text-sm font-medium  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring "
-                            >
-                                Details
-                            </button>
+                            <Link to={`/details/${_id}`}>
+                                <button
+                                    className="inline-block rounded btn btn-outline px-4 py-3 text-sm font-medium  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring "
+                                >
+                                    Details
+                                </button>
+                            </Link>
                         </div>
                     </div>
 

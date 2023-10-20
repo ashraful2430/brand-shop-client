@@ -15,6 +15,7 @@ import Apple from "../Pages/Apple/Apple";
 import Samsung from "../Pages/Samsung/Samsung";
 import Xiaomi from "../Pages/Xiaomi/Xiaomi";
 import UpdateDetails from "../Pages/UpdateDetails/UpdateDetails";
+import Details from "../Pages/Details/Details";
 
 const myPersonalRoutes = createBrowserRouter([
   {
@@ -41,7 +42,8 @@ const myPersonalRoutes = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/cart')
       },
       {
         path: "/blog",
@@ -81,6 +83,11 @@ const myPersonalRoutes = createBrowserRouter([
         path: "/update/:id",
         element: <PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
+      },
+      {
+        path: "/details/:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/brands')
       }
     ],
   },
