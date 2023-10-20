@@ -1,8 +1,13 @@
 
 import PropTypes from 'prop-types';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import Rating from 'react-rating';
+import { Link, useLocation } from 'react-router-dom';
 
 const SamsungDetails = ({ details }) => {
-    const { brandName, description, photo, price, productName, rating, type, } = details;
+    const { brandName, description, photo, price, productName, rating, type, _id } = details;
+    const loaction = useLocation();
+    console.log(loaction);
     return (
         <div>
             <div>
@@ -39,14 +44,22 @@ const SamsungDetails = ({ details }) => {
                                 <div className='mt-4'>
                                     <p>Price: {price}$</p>
                                 </div>
+                                <Rating className='text-3xl  text-amber-500'
+                                    initialRating={rating}
+                                    emptySymbol={<AiOutlineStar></AiOutlineStar>}
+                                    fullSymbol={<AiFillStar></AiFillStar>}
+                                    placeholderSymbol={<AiOutlineStar></AiOutlineStar>}
+                                />
 
                                 <div className='flex justify-between items-center mt-5'>
                                     <div>
-                                        <button
-                                            className="inline-block rounded btn btn-outline px-4 py-3 text-sm font-medium  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring "
-                                        >
-                                            Update
-                                        </button>
+                                        <Link to={`/update/${_id}`}>
+                                            <button
+                                                className="inline-block rounded btn btn-outline px-4 py-3 text-sm font-medium  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring "
+                                            >
+                                                Update
+                                            </button>
+                                        </Link>
                                     </div>
                                     <div>
                                         <button

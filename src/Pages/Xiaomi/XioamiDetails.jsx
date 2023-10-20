@@ -1,8 +1,11 @@
 
 import PropTypes from 'prop-types';
-
+import Rating from 'react-rating';
+import { AiOutlineStar } from 'react-icons/ai';
+import { AiFillStar } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 const XioamiDetails = ({ details }) => {
-    const { brandName, description, photo, price, productName, rating, type, } = details;
+    const { brandName, description, photo, price, productName, rating, type, _id } = details;
     return (
         <div>
             <div>
@@ -40,14 +43,22 @@ const XioamiDetails = ({ details }) => {
                                     <div className='mt-4'>
                                         <p>Price: {price}$</p>
                                     </div>
+                                    <Rating className='text-3xl  text-amber-500'
+                                        initialRating={rating}
+                                        emptySymbol={<AiOutlineStar></AiOutlineStar>}
+                                        fullSymbol={<AiFillStar></AiFillStar>}
+                                        placeholderSymbol={<AiOutlineStar></AiOutlineStar>}
+                                    />
 
                                     <div className='flex justify-between items-center mt-5'>
                                         <div>
-                                            <button
-                                                className="inline-block rounded btn btn-outline px-4 py-3 text-sm font-medium  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring "
-                                            >
-                                                Update
-                                            </button>
+                                            <Link to={`/update/${_id}`}>
+                                                <button
+                                                    className="inline-block rounded btn btn-outline px-4 py-3 text-sm font-medium  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring "
+                                                >
+                                                    Update
+                                                </button>
+                                            </Link>
                                         </div>
                                         <div>
                                             <button

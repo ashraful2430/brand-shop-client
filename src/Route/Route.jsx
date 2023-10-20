@@ -14,6 +14,7 @@ import Acer from "../Pages/Acer/Acer";
 import Apple from "../Pages/Apple/Apple";
 import Samsung from "../Pages/Samsung/Samsung";
 import Xiaomi from "../Pages/Xiaomi/Xiaomi";
+import UpdateDetails from "../Pages/UpdateDetails/UpdateDetails";
 
 const myPersonalRoutes = createBrowserRouter([
   {
@@ -75,6 +76,11 @@ const myPersonalRoutes = createBrowserRouter([
         path: "/xiaomi",
         element: <Xiaomi></Xiaomi>,
         loader: () => fetch('http://localhost:5000/brands')
+      },
+      {
+        path: "/update/:id",
+        element: <PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
       }
     ],
   },
