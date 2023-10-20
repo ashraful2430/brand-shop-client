@@ -22,7 +22,7 @@ const Details = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    swal("Well Done!", "Product added successfully!", "success");
+                    swal("Well Done!", "Product added to cart successfully!", "success");
                 }
             })
 
@@ -31,7 +31,7 @@ const Details = () => {
         <div className="pt-36 pb-36">
             <div className="grid md:grid-cols-2  max-w-5xl gap-5 mx-auto bg-base-100 shadow-xl p-3">
                 <div className=" my-auto">
-                    <img className="w-full h-80 " src={photo} alt="" />
+                    <img className="w-full h-full " src={photo} alt="" />
                 </div>
                 <div className="">
                     <h3 className="text-3xl font-semibold">{productName}</h3>
