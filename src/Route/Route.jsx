@@ -43,7 +43,7 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/cart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/cart')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/cart')
       },
       {
         path: "/blog",
@@ -52,42 +52,42 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/lenovo",
         element: <Lenovo></Lenovo>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       },
       {
         path: "/asus",
         element: <Asus></Asus>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       },
       {
         path: "/acer",
         element: <Acer></Acer>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       },
       {
         path: "/apple",
         element: <Apple></Apple>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       },
       {
         path: "/samsung",
         element: <Samsung></Samsung>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       },
       {
         path: "/xiaomi",
         element: <Xiaomi></Xiaomi>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       },
       {
         path: "/update/:id",
         element: <PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
+        loader: ({ params }) => fetch(`https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands/${params.id}`)
       },
       {
         path: "/details/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
       }
     ],
   },

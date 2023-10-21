@@ -15,7 +15,7 @@ const AddProduct = () => {
         const photo = form.photo.value;
         const details = { productName, brandName, type, price, rating, description, photo }
 
-        fetch('http://localhost:5000/brands', {
+        fetch(' https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -134,14 +134,19 @@ const AddProduct = () => {
                                     >
                                         Brand Name
                                     </label>
-
-                                    <input
-                                        type="text"
-                                        id="LastName"
-                                        name="brand_name"
-                                        className="mt-1 w-full p-3 border rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                                    />
+                                    <label className="input-group">
+                                        <select name="brand_name" className="select select-bordered w-full" required>
+                                            <option value="" disabled selected>Select Brand</option>
+                                            <option value="ASUS">Asus</option>
+                                            <option value="ACER">Acer</option>
+                                            <option value="LENOVO">Lenovo</option>
+                                            <option value="APPLE">Apple</option>
+                                            <option value="SAMSUNG">Samsung</option>
+                                            <option value="XIAOMI">Xiaomi</option>
+                                        </select>
+                                    </label>
                                 </div>
+
 
                                 <div className="col-span-6 sm:col-span-3">
                                     <label

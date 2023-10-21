@@ -6,7 +6,7 @@ import { useState } from "react";
 const MyCart = () => {
     const cartProducts = useLoaderData();
     const [items, setItems] = useState(cartProducts);
-    console.log(cartProducts, items);
+
     return (
         <>
             <div className="pt-20 pb-20">

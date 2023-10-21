@@ -20,7 +20,7 @@ const UpdateDetails = () => {
         const photo = form.photo.value;
         const updatedDetails = { productName, brandName, type, price, rating, description, photo }
 
-        fetch(`http://localhost:5000/brands/${_id}`, {
+        fetch(` https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -140,6 +140,26 @@ const UpdateDetails = () => {
                                     >
                                         Brand Name
                                     </label>
+                                    <label className="input-group">
+                                        <select name="brand_name" defaultValue={brandName} className="select select-bordered w-full" required>
+                                            <option value="" disabled selected>Select Brand</option>
+                                            <option value="ASUS">Asus</option>
+                                            <option value="ACER">Acer</option>
+                                            <option value="LENOVO">Lenovo</option>
+                                            <option value="APPLE">Apple</option>
+                                            <option value="SAMSUNG">Samsung</option>
+                                            <option value="XIAOMI">Xiaomi</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                {/* <div className="col-span-6 sm:col-span-3">
+                                    <label
+                                        htmlFor="LastName"
+                                        className="block text-sm font-medium text-gray-700"
+                                    >
+                                        Brand Name
+                                    </label>
 
                                     <input
                                         type="text"
@@ -148,7 +168,7 @@ const UpdateDetails = () => {
                                         defaultValue={brandName}
                                         className="mt-1 w-full p-3 border rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className="col-span-6 sm:col-span-3">
                                     <label
