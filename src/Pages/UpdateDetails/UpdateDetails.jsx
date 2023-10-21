@@ -42,6 +42,9 @@ const UpdateDetails = () => {
     return (
         <div>
             <section className="bg-white pt-24 pb-8 md:max-w-screen-xl mx-auto">
+                <div className="mb-10">
+                    <h1 className="text-center text-4xl font-medium">Update your products</h1>
+                </div>
                 <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                     <section
                         className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6 "

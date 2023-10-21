@@ -7,7 +7,7 @@ const Blog = () => {
     return (
         <>
             <div>
-                <div className="hero lg:h-[90vh] " style={{ backgroundImage: 'url(https://i.ibb.co/6Bgd3W4/25854.jpg)' }}>
+                <div className="hero lg:h-[90vh] " style={{ backgroundImage: 'url(https://i.ibb.co/f2qPqGS/7510722.jpg)' }}>
                     <div className="hero-overlay  bg-opacity-60"></div>
                     <div className="hero-content flex justify-start   w-full text-neutral-content">
                         <div className="mt-auto md:mt-7">

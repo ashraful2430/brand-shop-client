@@ -36,7 +36,10 @@ const AddProduct = () => {
     return (
         <>
 
-            <section className="bg-white pt-24 pb-8 md:max-w-screen-xl mx-auto">
+            <section className=" bg-white pt-44 -mb-56 md:max-w-screen-xl mx-auto">
+                <div className="mb-10">
+                    <h1 className="text-center text-4xl font-medium">Add your favorites products</h1>
+                </div>
                 <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                     <section
                         className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6 "

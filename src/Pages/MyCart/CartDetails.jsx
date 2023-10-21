@@ -5,21 +5,10 @@ import Rating from 'react-rating';
 import swal from 'sweetalert';
 
 
-const CartDetails = ({ products }) => {
-    const { brandName, photo, price, productName, rating, _id } = products;
+const CartDetails = ({ products, setItems, items }) => {
+    const { brandName, photo, price, productName, rating, _id, type } = products;
 
     const handleDelete = _id => {
-
-        // fetch(`http://localhost:5000/cart/${_id}`, {
-        //     method: 'DELETE'
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-
-        //     })
-        console.log(_id);
-
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -39,6 +28,8 @@ const CartDetails = ({ products }) => {
                                 swal("Poof! Your product has been deleted!", {
                                     icon: "success",
                                 });
+                                const remaining = items.filter(product => product._id !== _id);
+                                setItems(remaining)
                             }
                         })
                 } else {
@@ -49,21 +40,9 @@ const CartDetails = ({ products }) => {
 
     return (
         <div>
-            <article className="flex bg-white transition shadow-xl hover:shadow-2xl h-72">
-                <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-
-                </div>
-
-                <div className="hidden sm:block sm:basis-56">
-                    <img
-                        alt="Guitar"
-                        src={photo}
-                        className="aspect-square h-full w-full object-cover"
-                    />
-                </div>
-
-
-                <div className="flex flex-1 flex-col justify-between">
+            <div className="card card-compact  bg-base-100 shadow-xl">
+                <figure><img className='h-[300px]' src={photo} /></figure>
+                <div className="card-body">
                     <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
                         <div >
                             <h3 className="font-bold uppercase text-gray-900">
@@ -71,9 +50,18 @@ const CartDetails = ({ products }) => {
                             </h3>
                         </div>
 
-                        <p className="mt-2 line-clamp-3 text-sm/relaxed font-semibold text-gray-700">
-                            Brand :{brandName}
-                        </p>
+                        <div className='flex justify-between items-center mt-5 mb-3'>
+                            <div className='text-xl font-bold '>
+                                {brandName}
+                            </div>
+                            <div className="">
+                                <span
+                                    className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                                >
+                                    {type}
+                                </span>
+                            </div>
+                        </div>
                         <p className="mt-2 line-clamp-3 text-sm/relaxed font-semibold text-gray-700">
                             Price :{price}$
                         </p>
@@ -86,19 +74,20 @@ const CartDetails = ({ products }) => {
                             />
                         </p>
                     </div>
-
-
                     <div className="px-2 pb-2">
                         <button onClick={() => handleDelete(_id)} className="btn btn-outline  w-full">Delete</button>
                     </div>
                 </div>
-            </article>
+            </div>
+
         </div>
     );
 };
 
 CartDetails.propTypes = {
-    products: PropTypes.object
+    products: PropTypes.object,
+    setItems: PropTypes.func,
+    items: PropTypes.object
 };
 
 export default CartDetails;
