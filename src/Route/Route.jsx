@@ -26,69 +26,111 @@ const myPersonalRoutes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/add-product",
-        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cart",
-        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/cart')
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/cart"
+          ),
       },
       {
         path: "/blog",
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
       },
       {
         path: "/lenovo",
         element: <Lenovo></Lenovo>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
       },
       {
         path: "/asus",
         element: <Asus></Asus>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
       },
       {
         path: "/acer",
         element: <Acer></Acer>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
       },
       {
         path: "/apple",
         element: <Apple></Apple>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
       },
       {
         path: "/samsung",
         element: <Samsung></Samsung>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
       },
       {
         path: "/xiaomi",
         element: <Xiaomi></Xiaomi>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
       },
       {
         path: "/update/:id",
-        element: <PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <UpdateDetails></UpdateDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: () => fetch('https://my-tenth-assignment-server-jzdbdk0k0.vercel.app/brands')
-      }
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ashraful2430.vercel.app/brands"
+          ),
+      },
     ],
   },
 ]);
