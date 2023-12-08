@@ -1,10 +1,34 @@
-- Here are some features about my project 
-    - In this website you can see only the brand related products that you click on.
-    - In this website you can log in your gmail or using your email.
-    - In this website you can store all the products that you liked.
-    - In this website you can not access to some information if you don't log in 
-    - In this website you can add your products also in my database .
-    - In this website you can also update the existing products information.
-    - In this website you can also delete the products form my cart page id you don't like the products.
+# Tech Trend Store
 
-- Live website link :  https://my-tenth-assignment-5a6bc.web.app
+## Overview
+
+Welcome to Tech Trend Store – your go-to destination for the latest and greatest in brand-related tech products. This web application is designed to provide users with a seamless shopping experience, allowing them to explore, like, and add products to their cart. This web application is built with React, Tailwind CSS, Daisy UI, MongoDB, Node.js, and Express.js.
+
+## Live Link
+
+Explore the "Tech Trend Store" [here](https://my-tenth-assignment-5a6bc.web.app).
+
+## Features
+
+1. **Product Browsing:**
+
+   - Users can browse and view brand-related tech products.
+
+2. **User Authentication:**
+
+   - Users can log in using their Gmail or email.
+
+3. **Product Liked List:**
+
+   - Users can store products they like for future reference.
+
+4. **Access Control:**
+
+   - Product information is accessible only to logged-in users.
+
+5. **Shopping Cart:**
+
+   - Users can add products to their cart for purchase.
+
+6. **Product Management:**
+   - Users can update and delete products from their cart.
