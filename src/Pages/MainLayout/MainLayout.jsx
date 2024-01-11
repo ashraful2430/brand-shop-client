@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <>
+    <div className="">
       <div className="font-sans">
         <Header></Header>
       </div>
@@ -14,7 +14,7 @@ const MainLayout = () => {
       <div className="font-sans">
         <Footer></Footer>
       </div>
-    </>
+    </div>
   );
 };
 
