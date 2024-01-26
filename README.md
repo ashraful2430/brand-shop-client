@@ -8,6 +8,8 @@ Welcome to Tech Trend Store – your go-to destination for the latest and greate
 
 Explore the "Tech Trend Store" [here](https://my-tenth-assignment-5a6bc.web.app).
 
+## Backend GitHub Link
+See my backend code [here](https://github.com/ashraful2430/brand-shop-server)
 ## Features
 
 1. **Product Browsing:**
